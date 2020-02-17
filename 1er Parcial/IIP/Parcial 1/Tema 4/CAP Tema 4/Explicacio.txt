@@ -1,0 +1,4 @@
+CCDHH4ai
+--------
+Al ser referencies, la "corda" del globus se borra quan acaba el metode. Si fem asignacions anmb gets i sets, els valor si que canvien, 
+perque durant el metode se canvien els valors i una vegada acaba el metode, se tallen les cordes.
