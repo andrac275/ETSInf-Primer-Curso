@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Act2
+comment0.text=\r\n\ asdfas\r\n\r\n\ @author\ asdf\r\n\ @version\ 151515\r\n
+comment1.params=v\ x\ ini\ fi
+comment1.target=boolean\ sumaSimetricaX(int[],\ int,\ int,\ int)
+comment1.text=\r\n\ Precondicio.\ Ini\ >\=0\ i\ fi<v.length.\r\n
+numComments=2

@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.target=RecursioArraysRecorregut
+comment0.text=\r\n\ Problemes\ recursius\ de\ recorregut\ amb\ arrays.\r\n\ \r\n\ @author\ PRG\ \r\n\ @version\ Curs\ 2019/20\r\n
+comment1.params=
+comment1.target=RecursioArraysRecorregut()
+comment10.params=a\ ini\ fi
+comment10.target=void\ duplicarAsc(int[],\ int,\ int)
+comment10.text=\ Duplica\ els\ elements\ de\ a[ini..fi].\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ fi\ <\=\ a.length\ -\ 1\r\n\ \ Recorregut\ recursiu\ ascendent\r\n\ \ Crida\ inicial\ per\ duplicar\ els\ elements\ d'a\ entre\ dues\ posicions\r\n\ \ esq\ i\ dre\ donades\ (0\ <\=\ esq\ <\=\ dre\ <\=\ a.length\ -\ 1)\:\r\n\ \ duplicarAsc(a,\ esq,\ dre);\r\n
+comment11.params=a\ ini\ fi
+comment11.target=void\ duplicarDesc(int[],\ int,\ int)
+comment11.text=\ Duplica\ els\ elements\ de\ a[ini..fi].\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ fi\ <\=\ a.length\ -\ 1\r\n\ \ Recorregut\ recursiu\ descendent\r\n\ \ Crida\ inicial\ per\ duplicar\ els\ elements\ d'a\ entre\ dues\ posicions\r\n\ \ esq\ i\ dre\ donades\ (0\ <\=\ esq\ <\=\ dre\ <\=\ a.length\ -\ 1)\:\r\n\ \ duplicarAsc(a,\ esq,\ dre);\r\n
+comment2.params=a\ pos
+comment2.target=void\ iniciar(double[],\ int)
+comment2.text=\ Inicialitza\ amb\ valors\ aleatoris\ en\ [0.0,1.0[\r\n\ \ els\ elements\ de\ a[pos..a.length-1]\ \r\n\ \ Precondicio\:\ 0\ <\=\ pos\ <\ a.length,\ a.length\ >\ 0\r\n\ \ Recorregut\ recursiu\ ascendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ iniciar(a,\ 0);\ \r\n
+comment3.params=a\ pos
+comment3.target=int\ sumaRecAsc(int[],\ int)
+comment3.text=\ Torna\ la\ suma\ dels\ elements\ de\ a[pos..a.length-1].\r\n\ \ Precondicio\:\ 0\ <\=\ pos\ <\=\ a.length\ \r\n\ \ Recorregut\ recursiu\ ascendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ suma\ \=\ sumaRecAsc(a,\ 0);\r\n
+comment4.params=a\ pos
+comment4.target=int\ sumaRecDesc(int[],\ int)
+comment4.text=\ Torna\ la\ suma\ dels\ elements\ de\ a[0..pos].\r\n\ \ Precondicio\:\ -1\ <\=\ pos\ <\ a.length\r\n\ \ Recorregut\ recursiu\ descendent\ \ \ \ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ suma\ \=\ sumaRecDesc(a,\ a.length\ -\ 1);\r\n
+comment5.params=a\ x\ pos
+comment5.target=int\ comptarRecAsc(int[],\ int,\ int)
+comment5.text=\ Compta\ les\ aparicions\ d'un\ enter\ x\ en\ a[pos..a.length-1].\r\n\ \ Precondicio\:\ 0\ <\=\ pos\ <\=\ a.length\ \r\n\ \ Recorregut\ recursiu\ ascendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ num\ \=\ comptarRecAsc(a,\ x,\ 0);\r\n
+comment6.params=a\ x\ pos
+comment6.target=int\ comptarRecDesc(int[],\ int,\ int)
+comment6.text=\ Compta\ les\ aparicions\ d'un\ enter\ x\ en\ a[0..pos].\ \ \ \ \ \ \ \ \r\n\ \ Precondicio\:\ -1\ <\=\ pos\ <\ a.length\ \r\n\ \ Recorregut\ recursiu\ descendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ num\ \=\ comptarRecDesc(a,\ x,\ a.length\ -\ 1);\r\n
+comment7.params=a\ pos
+comment7.target=int\ maximAsc(int[],\ int)
+comment7.text=\ Torna\ el\ maxim\ de\ a[pos..a.length-1].\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ pos\ <\=\ a.length\ -\ 1\r\n\ \ Recorregut\ recursiu\ ascendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ max\ \=\ maximAsc(a,\ 0);\r\n
+comment8.params=a\ pos
+comment8.target=int\ maximDesc(int[],\ int)
+comment8.text=\ Torna\ el\ maxim\ de\ a[0..pos].\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ pos\ <\=\ a.length\ -\ 1\r\n\ \ Recorregut\ recursiu\ descendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ max\ \=\ maximDesc(a,\ a.length\ -\ 1);\r\n
+comment9.params=a\ ini\ fi
+comment9.target=void\ invertir(int[],\ int,\ int)
+comment9.text=\ Inverteix\ els\ elements\ de\ a[ini..fi].\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ fi\ <\=\ a.length\ -\ 1\r\n\ \ Recorregut\ recursiu\ combinat\r\n\ \ Crida\ inicial\ per\ invertir\ els\ elements\ d'a\ entre\ dues\ posicions\ \r\n\ \ esq\ i\ dre\ donades\ (0\ <\=\ esq\ <\=\ dre\ <\=\ a.length\ -\ 1)\:\r\n\ \ invertir(a,\ esq,\ dre);\r\n
+numComments=12

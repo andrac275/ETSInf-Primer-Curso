@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=RecursioString
+comment0.text=\r\n\ Problemes\ recursius\ amb\ String.\r\n\ \r\n\ @author\ PRG\r\n\ @version\ Curs\ 2019/20\r\n
+comment1.params=
+comment1.target=RecursioString()
+comment10.params=s\ i\ j
+comment10.target=boolean\ palindrom(java.lang.String,\ int,\ int)
+comment10.text=\ \r\n\ Determina\ si\ una\ cadena\ de\ caracters\ es\ un\ palindrom\:\ paraula\ o\ \r\n\ frase\ que\ es\ llig\ igual\ d'esquerra\ a\ dreta\ que\ de\ dreta\ a\ esquerra.\ \r\n\ Esta\ solucio\ nomes\ serveix\ per\ a\ paraules\ (no\ per\ a\ frases).\r\n\ @param\ s\ String\ que\ es\ vol\ comprovar\ si\ es\ un\ palindrom.\r\n\ @param\ i\ int\ que\ indica\ la\ posicio\ inicial\ de\ la\ substring\ a\ comprovar.\r\n\ @param\ j\ int\ que\ indica\ la\ posicio\ final\ de\ la\ substring\ a\ comprovar.\r\n\ @return\ boolean,\ true\ si\ s\ es\ un\ palindrom\ o\ false\ en\ cas\ contrari.\r\n\ Versio\ 2\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0,\ 0\ <\=\ i\ <\ s.length(),\ 0\ <\=\ j\ <\ s.length()\r\n\ CRIDA\ INICIAL\ amb\ i\ \=\ 0\ i\ j\ \=\ s.length()\ -\ 1\r\n
+comment2.params=s
+comment2.target=int\ comptaAs(java.lang.String)
+comment2.text=\r\n\ Torna\ el\ nombre\ de\ 'a'\ en\ la\ String\ que\ rep.\r\n\ @param\ s\ String\ en\ la\ qual\ es\ volen\ comptar\ les\ 'a's.\r\n\ @return\ int,\ nombre\ de\ 'a'\ en\ s.\r\n\ Recorregut\ recursiu\ ascendent\ -\ Versio\ 1.\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\r\n
+comment3.params=s\ pos
+comment3.target=int\ comptaAs(java.lang.String,\ int)
+comment3.text=\r\n\ Torna\ el\ nombre\ de\ 'a'\ en\ la\ String\ que\ rep.\r\n\ @param\ s\ String\ en\ la\ qual\ es\ volen\ comptar\ les\ 'a's.\r\n\ @param\ pos\ posicio\ en\ s\ on\ comen\u00E7a\ la\ substring.\r\n\ @return\ int,\ nombre\ de\ 'a'\ en\ s.\r\n\ Recorregut\ recursiu\ ascendent\ -\ Versio\ 2.\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\ i\ 0\ <\=\ pos\ <\=\ s.length()\r\n\ CRIDA\ INICIAL\ amb\ pos\ \=\ 0\r\n
+comment4.params=s
+comment4.target=int\ comptaAs2(java.lang.String)
+comment4.text=\r\n\ Torna\ el\ nombre\ de\ 'a'\ en\ la\ String\ que\ rep.\r\n\ @param\ s\ String\ en\ la\ qual\ es\ volen\ comptar\ les\ 'a's.\r\n\ @return\ int,\ nombre\ de\ 'a'\ en\ s.\r\n\ Recorregut\ recursiu\ descendent\ -\ Versio\ 1.\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\r\n
+comment5.params=s\ pos
+comment5.target=int\ comptaAs2(java.lang.String,\ int)
+comment5.text=\r\n\ Torna\ el\ nombre\ de\ 'a'\ en\ la\ String\ que\ rep.\r\n\ @param\ s\ String\ en\ la\ qual\ es\ volen\ comptar\ les\ 'a's.\r\n\ @param\ pos\ posicio\ en\ s\ on\ acaba\ la\ substring.\r\n\ @return\ int,\ nombre\ de\ 'a'\ en\ s.\r\n\ Recorregut\ recursiu\ descendent\ -\ Versio\ 2.\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\ i\ -1\ <\=\ pos\ <\ s.length()\r\n\ CRIDA\ INICIAL\ amb\ pos\ \=\ s.length()\ -\ 1\r\n
+comment6.params=a\ b
+comment6.target=boolean\ esSufixe(java.lang.String,\ java.lang.String)
+comment6.text=\ \r\n\ Comprova\ si\ a\ es\ sufixe\ de\ b\:\ es\ diu\ que\ a\ es\ sufixe\ de\ b\r\n\ quan\ tots\ els\ caracters\ de\ a\ estan\ consecutius,\ en\ el\ mateix\ \r\n\ ordre\ original,\ al\ final\ de\ b.\r\n\ La\ cadena\ buida\ es\ sufixe\ de\ qualsevol\ altra,\ fins\ i\ tot\ si\ \r\n\ aquesta\ altra\ tambe\ es\ buida.\ A\ mes,\ una\ cadena\ a\ no\ pot\ ser\ \ \r\n\ sufixe\ d'una\ altra\ b\ si\ a\ es\ de\ longitud\ mes\ gran\ que\ b.\r\n\ @param\ a\ String.\r\n\ @param\ b\ String.\r\n\ @return\ boolean,\ true\ si\ a\ es\ sufixe\ de\ b,\ o\ false\ en\ cas\ contrari.\r\n\ Cerca\ recursiva\ descendent.\r\n\ PRECONDICIO\:\ a.length()\ >\=\ 0\ i\ b.length()\ >\=\ 0\ \r\n
+comment7.params=a\ b
+comment7.target=boolean\ esSubcadena(java.lang.String,\ java.lang.String)
+comment7.text=\r\n\ Comprova\ si\ a\ es\ o\ no\ subcadena\ de\ b.\ Es\ diu\ que\ a\ es\ subcadena\ \r\n\ de\ b\ quan\ tots\ els\ caracters\ de\ a\ estan\ consecutius,\ en\ el\ mateix\ \r\n\ ordre\ original,\ en\ algun\ lloc\ de\ b.\ O,\ el\ que\ es\ el\ mateix,\ quan\ \r\n\ a\u0013es\ sufixe\ de\ b\ o\ d'alguna\ de\ les\ possibles\ subcadenes\ de\ b.\r\n\ La\ cadena\ buida\ es\ subcadena\ de\ qualsevol\ altra,\ encara\ que\ aquella\ \r\n\ altra\ tambe\ estigues\ buida.\ A\ mes,\ una\ cadena\ no\ pot\ ser\ subcadena\ \r\n\ d'una\ altra\ si\ la\ primera\ \u0013es\ de\ longitud\ mes\ gran\ que\ la\ segona.\r\n\ @param\ a\ String.\r\n\ @param\ b\ String.\r\n\ @return\ boolean,\ true\ si\ a\ es\ subcadena\ de\ b,\ o\ false\ en\ cas\ contrari.\r\n\ Cerca\ recursiva\ descendent.\r\n\ PRECONDICIO\:\ a.length()\ >\=\ 0\ i\ b.length()\ >\=\ 0\ \r\n
+comment8.params=s
+comment8.target=void\ invers(java.lang.String)
+comment8.text=\ \r\n\ Mostra\ en\ ordre\ invers\ els\ caracters\ de\ s.\r\n\ @param\ s\ String\ que\ es\ vol\ mostrar\ en\ ordre\ invers.\r\n\ Recorregut\ recursiu\ descendent.\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\ \r\n
+comment9.params=s
+comment9.target=boolean\ palindrom(java.lang.String)
+comment9.text=\ \r\n\ Determina\ si\ una\ cadena\ de\ caracters\ es\ un\ palindrom\:\ paraula\ o\r\n\ frase\ que\ es\ llig\ igual\ d'esquerra\ a\ dreta\ que\ de\ dreta\ a\ esquerra.\ \r\n\ Esta\ solucio\ nomes\ serveix\ per\ a\ paraules\ (no\ per\ a\ frases).\r\n\ @param\ s\ String\ que\ es\ vol\ comprovar\ si\ es\ un\ palindrom.\r\n\ @return\ boolean,\ true\ si\ s\ es\ un\ palindrom\ o\ false\ en\ cas\ contrari.\r\n\ Versio\ 1\r\n\ PRECONDICIO\:\ s.length()\ >\=\ 0\r\n
+numComments=11
