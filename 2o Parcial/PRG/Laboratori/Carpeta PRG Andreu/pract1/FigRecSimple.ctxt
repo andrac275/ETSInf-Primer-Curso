@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=FigRecSimple
+comment0.text=\n\ La\ classe\ FigRecSimple\ inclou\ els\ elements\ basics\n\ per\ tal\ de\ dibuixar\ una\ figura\ recursivament.\n\ \n\ @author\ PRG-DSIC-ETSINF,\ pmarques\ \n\ @version\ Curs\ 2018-19\n
+comment1.params=
+comment1.target=FigRecSimple()
+comment1.text=No\ hi\ ha\ objectes\ d'aquesta\ classe.
+comment2.params=ordIni
+comment2.target=void\ figRec(int)
+comment2.text=\n\ Dibuixa\ una\ serie\ de\ quadrats\ inclosos\ uns\ en\n\ altres.\ El\ numero\ de\ quadrats\ ve\ donat\ pel\n\ numero\ ordIni.\ \ \ \ \n\ @param\ ordIni\ int,\ numero\ de\ quadrats\ que\ es\ dibuixen.\n\ PRECONDICIO\:\ ordIni\ >\=\ 0\n
+comment3.params=g\ ord\ l
+comment3.target=void\ figRec(graph2D.Graph2D,\ int,\ double)
+comment3.text=\n\ Dibuix\ un\ quadrat\ d'ordre\ ord\ i\ costat\ l.\n\ @param\ g\ Graph2D,\ l'espai\ Graph2D\ on\ es\ fa\ el\ dibuix.\n\ @param\ ord\ int,\ ordre\ (o\ numero)\ del\ quadrat.\n\ @param\ l\ double,\ longitud\ del\ costat\ del\ quadrat.\n\ PRECONDICIO\:\ ord\ >\=\ 0\ \n
+comment4.params=
+comment4.target=void\ delay()
+comment4.text=Suspen\ temporalment\ l'execucio\ durant\ 300\ ms.
+numComments=5
