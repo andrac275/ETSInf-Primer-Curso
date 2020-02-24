@@ -1,0 +1,285 @@
+﻿--> //Activitat 2
+
+--> //Apartat A
+
+--> A=[1 -1 0;1 2 0; 1 -1 1]
+ A  = 
+
+   1.  -1.   0.
+   1.   2.   0.
+   1.  -1.   1.
+
+
+--> a=[2;8;3]
+ a  = 
+
+   2.
+   8.
+   3.
+
+
+--> rref([A a])
+ ans  =
+
+   1.   0.   0.   4.
+   0.   1.   0.   2.
+   0.   0.   1.   1.
+
+
+--> //Solucio: x = 4; y = 2 ; z=1
+
+--> //Apartat B
+
+--> B=[1 1 -1 2;2 3 0 4;0 1 1 3; -1 -2 -1 -2]
+ B  = 
+
+   1.   1.  -1.   2.
+   2.   3.   0.   4.
+   0.   1.   1.   3.
+  -1.  -2.  -1.  -2.
+
+
+--> b=[1;2;-4;-1]
+ b  = 
+
+   1.
+   2.
+  -4.
+  -1.
+
+
+--> rref([B b])
+ ans  =
+
+   1.   0.   0.  -7.   13.
+   0.   1.   0.   6.  -8. 
+   0.   0.   1.  -3.   4. 
+   0.   0.   0.   0.   0. 
+
+
+--> //Solucio: SCI. t=Alfa; Z=4+3*Alfa; Y=-8 -6*Alfa; X=13+7*Alfa
+
+--> //Apartat C
+
+--> C=[1 0 -2;-1 -2 2;2 2 -4]
+ C  = 
+
+   1.   0.  -2.
+  -1.  -2.   2.
+   2.   2.  -4.
+
+
+--> c=[2;-2;3]
+ c  = 
+
+   2.
+  -2.
+   3.
+
+
+--> rref([C c])
+ ans  =
+
+   1.   0.  -2.   0.
+   0.   1.   0.   0.
+   0.   0.   0.   1.
+
+
+--> //Sistema Incompatible perque diu que 0=1 i aixo no es.
+
+--> //Apartat D
+
+
+--> s1=[33/2;-11;5/2;1/2]
+ s1  = 
+
+   16.5
+  -11.
+   2.5
+   0.5
+
+
+--> s2=[33/2;-11;7/2;1/2]
+ s2  = 
+
+   16.5
+  -11.
+   3.5
+   0.5
+
+
+--> //Simplement sustituir...
+
+
+--> B*s1
+ ans  =
+
+   4.
+   2.
+  -7.
+   2.
+
+
+--> //s1 no es solucio perque no dona els mateixos resultats de la dreta del igual del apartat b.
+
+--> B*s2
+ ans  =
+
+   3.
+   2.
+  -6.
+   1.
+
+
+--> //s2 no es tampoc solucio de B
+
+--> //En cap cas dels dos dona com a resultat [1;2;-4;-1] que es lo del apartat B
+
+--> //ACTIVITAT 3
+
+--> a=[2;8;3]
+ a  = 
+
+   2.
+   8.
+   3.
+
+
+--> rank(A)==rank([A a])
+ ans  =
+
+  T
+
+
+--> //SCompatible perque te el mateix rang, ara queda saber si es Determinat o indeterminat
+
+--> rank(A)
+ ans  =
+
+   3.
+
+
+--> //Com la matriu del coeficient es 3x3(tenim 3 incognites x y z), que isca rang 3 es que es maxim... aleshores es DETERMINAT
+
+--> rank(B)==rank([B b])
+ ans  =
+
+  T
+
+
+--> //Com torna true, sabem que es COMPATIBLE. Ara... ¿Determinat o Indeterminat?
+
+--> rank(B)
+ ans  =
+
+   3.
+
+
+--> //Tenim 4 incognites (x y z t) pero el rang es 3... Per tant tenim 1 parametre i el Sistema es Compatible INDETERMINAT
+
+--> rank(C)=rank([C c])
+
+Unexpected redefinition of Scilab function.
+--> rank(C)==rank([C c])
+ ans  =
+
+  F
+
+
+--> //Torna False aixi que sabem que es incompatible perque els rangs de la matriu i la ampliada no coincideixen. Ja hem acabat.
+
+--> //Despres de comparar els resultats, veig que coincideixen.
+
+--> //Activitat 4
+
+--> //En la llibreta pagina 1 tinc plantejat el sistema dels caminons i com l'he fet... Aci planteje la matriu per resoldrer-la Esta matriu l'he escrita en la llibreta.
+
+--> V=[5 3 4;2 5 5;4 3 6]
+ V  = 
+
+   5.   3.   4.
+   2.   5.   5.
+   4.   3.   6.
+
+
+--> v=[45;46;54]
+ v  = 
+
+   45.
+   46.
+   54.
+
+--> rref([V v])
+ ans  =
+
+   1.   0.   0.   3.
+   0.   1.   0.   2.
+   0.   0.   1.   6.
+
+
+--> //El camio 1 faria 3 viatges, el camino 2 faria 2 viatges i el camio 3 faria 6.
+
+--> //Activitat 5
+
+--> //He plantejat el fluxe en la fulla que li he entregat a vicent i he possat la matriu al programa ara a continuacio
+
+--> A=[1 -1 0 0 0;1 0 1 -1 0;0 1 1 0 1;0 0 0 1 1]
+ A  = 
+
+   1.  -1.   0.   0.   0.
+   1.   0.   1.  -1.   0.
+   0.   1.   1.   0.   1.
+   0.   0.   0.   1.   1.
+
+
+--> a=[400;600;300;100]
+ a  = 
+
+   400.
+   600.
+   300.
+   100.
+
+
+--> rref([A a])
+ ans  =
+
+   1.   0.   1.   0.   1.   700.
+   0.   1.   1.   0.   1.   300.
+   0.   0.   0.   1.   1.   100.
+   0.   0.   0.   0.   0.   0.  
+
+
+--> //Per a mi eren X Y Z T U. Mirant el resultat se veu que 
+
+--> //La Z i la U son solucions parametriques. Per tant el resultat
+
+--> //se dona en funcio d'elles.
+
+--> //Flux quan U=50 i Z=150????
+
+--> B=[1 0 0; 0 1 0; 0 0 1]
+ B  = 
+
+   1.   0.   0.
+   0.   1.   0.
+   0.   0.   1.
+
+
+--> b=[700-150-50;300-150;100-50]
+ b  = 
+
+   500.
+   150.
+   50.
+
+
+--> rref([B b])
+ ans  =
+
+   1.   0.   0.   500.
+   0.   1.   0.   150.
+   0.   0.   1.   50. 
+
+
+--> diary(0)
