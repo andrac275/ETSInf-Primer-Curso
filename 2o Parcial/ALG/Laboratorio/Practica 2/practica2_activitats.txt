@@ -1,0 +1,791 @@
+ ans  =
+
+   1.
+
+
+--> //Carregue les funcions de DiagonalDominant i SustitucionProgresiva. Estan en el PF les funcions.
+
+--> function x=DD(A)
+  >     //Determina, para la matriz cuadrada A y por filas, la diferencia (en valor absoluto) entre el elemento diagonal y el resto de elementos.
+  >     [n,n]=size(A);
+  >     v=zeros(n);
+  >     for i=1:n 
+  >         v(i)=2*abs(A(i,i))-sum(abs(A(i,:)));
+  >     end;
+  >     x=and(v>0)
+  > endfunction
+
+--> function x=SustitucionProgresiva(A,b)
+  >     //Dado un sistema de ecuaciones Ax=b, con A matriz triangular inferior
+  >     //invertible, resuelve el sistema por SUSTITUCIÓN PROGRESIVA
+  > [m,n]=size(A);o=length(b);
+  > x=zeros(n,1);
+  > x(1)=b(1)/A(1,1); 
+  > for i=2:n
+  >      x(i)=(b(i)-A(i,1:i-1)*x(1:i-1))/A(i,i); 
+  > end;
+  > endfunction
+
+--> //Activitat 1
+
+--> //Apartat A
+
+--> A=[10 1 2 3;4 -6 -1 9;-2 3 8 51]
+ A  = 
+
+   10.   1.   2.   3. 
+   4.   -6.  -1.   9. 
+  -2.    3.   8.   51.
+
+
+--> //Te que ser quadrada!!!!! No gastees la ampliada!
+
+--> A=[10 1 2;4 -6 -1;-2 3 8]
+ A  = 
+
+   10.   1.   2.
+   4.   -6.  -1.
+  -2.    3.   8.
+
+
+--> DD(A)
+ ans  =
+
+  T
+
+
+--> //Es diagonalment dominant. Visualment veiem que el valor absolut de cada membre de la diagonal es major a la suma dels altres membres de la fila tambe en valor absolut.
+
+--> //Apartat B
+
+--> B=[2 1 0 1;1 1 1 2;2 1 3 1;1 2 1 -3]
+ B  = 
+
+   2.   1.   0.   1.
+   1.   1.   1.   2.
+   2.   1.   3.   1.
+   1.   2.   1.  -3.
+
+
+--> DD(B)
+ ans  =
+
+  F
+
+
+--> //Aquesta no es diagonalment dominant. |2| no es major estricque que |1+0+1|, ja falla en la primera fila.
+
+--> //Activitat 2
+
+--> //Definir els vector solucio
+
+--> a=[3;9;51]
+ a  = 
+
+   3.
+   9.
+   51.
+
+
+--> b=[1;1;1;2]
+ b  = 
+
+   1.
+   1.
+   1.
+   2.
+
+
+--> //Solucions sistemes activitat 1
+
+--> rref([Aa])
+
+Undefined variable: Aa
+
+--> rref([A a])
+ ans  =
+
+   1.   0.   0.  -0.85
+   0.   1.   0.  -3.3 
+   0.   0.   1.   7.4 
+
+
+--> rref([B b])
+ ans  =
+
+   1.   0.   0.   0.   0.
+   0.   1.   0.   0.   1.
+   0.   0.   1.   0.   0.
+   0.   0.   0.   1.   0.
+
+
+--> solA=rref([A a])
+ solA  = 
+
+   1.   0.   0.  -0.85
+   0.   1.   0.  -3.3 
+   0.   0.   1.   7.4 
+
+
+--> solB=rref([B b])
+ solB  = 
+
+   1.   0.   0.   0.   0.
+   0.   1.   0.   0.   1.
+   0.   0.   1.   0.   0.
+   0.   0.   0.   1.   0.
+
+
+--> //Metodes Jacobi i Gauss-Seidel
+
+--> //Obtindre la diagonal de la matriu A
+
+--> D=diag(diag(A))
+ D  = 
+
+   10.   0.   0.
+   0.   -6.   0.
+   0.    0.   8.
+
+
+--> //Obtindre la part baixa(L) i la part alta (U)
+
+--> L=tril(A)-D
+ L  = 
+
+   0.   0.   0.
+   4.   0.   0.
+  -2.   3.   0.
+
+
+--> U=triu(A)-D
+ U  = 
+
+   0.   1.   2.
+   0.   0.  -1.
+   0.   0.   0.
+
+
+--> //Definir operacions per a no repetirles despres. La R, la inversa de D i la M=L+D
+
+--> R=L+U
+ R  = 
+
+   0.   1.   2.
+   4.   0.  -1.
+  -2.   3.   0.
+
+
+--> F=inv(D)
+ F  = 
+
+   0.1   0.          0.   
+   0.   -0.1666667   0.   
+   0.    0.          0.125
+
+
+--> M=L+D
+ M  = 
+
+   10.   0.   0.
+   4.   -6.   0.
+  -2.    3.   8.
+
+
+--> //Ara ja ho tenim tot. Ara aplicar la formula del jacobi i Gauss
+
+--> //Jacobi
+
+--> //Definir Vector inicial
+
+--> X=[0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+
+
+--> //Aplicar bucle amb 6 iteracions
+
+--> for i=1:6
+  > X=F*(a-R*X)
+  > end
+ X  = 
+
+   0.3
+  -1.5
+   6.375
+
+ X  = 
+
+  -0.825
+  -2.3625
+   7.0125
+
+ X  = 
+
+  -0.86625
+  -3.21875
+   7.0546875
+
+ X  = 
+
+  -0.7890625
+  -3.2532812
+   7.3654687
+
+ X  = 
+
+  -0.8477656
+  -3.2536198
+   7.3977148
+
+ X  = 
+
+  -0.854181
+  -3.2981296
+   7.383166
+
+
+--> solA
+ solA  = 
+
+   1.   0.   0.  -0.85
+   0.   1.   0.  -3.3 
+   0.   0.   1.   7.4 
+
+
+--> //Com podem veure dona practicament igual que el rrefA a d'abans
+
+--> //Metode Gauss-Seidel
+
+--> F=inv(L+D)
+ F  = 
+
+   0.1         0.          0.   
+   0.0666667  -0.1666667   0.   
+   0.          0.0625      0.125
+
+
+--> X=[0;0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+   0.
+
+
+--> for i=1:6
+  > X=F*(a-U*X);
+  > end
+
+Inconsistent row/column dimensions.
+
+--> X=[0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+
+
+--> for i=1:6
+  > X=F*(a-U*X);
+  > end
+
+--> X
+ X  = 
+
+  -0.8500021
+  -3.3000002
+   7.3999996
+
+
+--> //Dona igual. S'aproxima millor.
+
+--> //Ara metode amb la funcio SustitucionProgresiva
+
+--> X=[0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+
+
+--> for i=1:6
+  > X=SustitucionProgresiva(M,a-U*X)
+  > end
+ X  = 
+
+   0.3
+  -1.3
+   6.9375
+
+ X  = 
+
+  -0.9575
+  -3.2945833
+   7.3710938
+
+ X  = 
+
+  -0.8447604
+  -3.2916892
+   7.3981934
+
+ X  = 
+
+  -0.8504697
+  -3.3000121
+   7.3998871
+
+ X  = 
+
+  -0.8499762
+  -3.2999653
+   7.3999929
+
+ X  = 
+
+  -0.8500021
+  -3.3000002
+   7.3999996
+
+
+--> solA
+ solA  = 
+
+   1.   0.   0.  -0.85
+   0.   1.   0.  -3.3 
+   0.   0.   1.   7.4 
+
+
+--> //Una altra vegada dona el mateix.
+
+--> //Ara el sistema b. Aci no tenim garantia de convergencia perque la diagonal dominant era falsa. Anem a veure que passa....
+
+--> D=diag(diag(B))
+ D  = 
+
+   2.   0.   0.   0.
+   0.   1.   0.   0.
+   0.   0.   3.   0.
+   0.   0.   0.  -3.
+
+
+--> L=tril(B)-D;
+
+--> U=triu(B)-D;
+
+--> R=L+U;
+
+--> F=inv(D);
+
+--> M=L+D;
+
+--> //Jacobi
+
+--> for i=1:6
+  > end
+
+--> X=[0;0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+   0.
+
+
+--> for i=1:6
+  > X=F*(b-R*X)
+  > end
+ X  = 
+
+   0.5
+   1.
+   0.3333333
+  -0.6666667
+
+ X  = 
+
+   0.3333333
+   1.5
+  -0.1111111
+   0.2777778
+
+ X  = 
+
+  -0.3888889
+   0.2222222
+  -0.4814815
+   0.4074074
+
+ X  = 
+
+   0.1851852
+   1.0555556
+   0.382716
+  -0.808642
+
+ X  = 
+
+   0.3765432
+   2.0493827
+   0.127572
+   0.2263374
+
+ X  = 
+
+  -0.6378601
+   0.0432099
+  -0.6762689
+   0.8676269
+
+
+--> solB
+ solB  = 
+
+   1.   0.   0.   0.   0.
+   0.   1.   0.   0.   1.
+   0.   0.   1.   0.   0.
+   0.   0.   0.   1.   0.
+
+
+--> //No va Jacobi. Gauss si anira (perque ho diu Vicent)
+
+--> //GaussSeidel
+
+--> F=inv(L+D)
+ F  = 
+
+   0.5         0.          0.          0.       
+  -0.5         1.          0.          0.       
+  -0.1666667  -0.3333333   0.3333333   0.       
+  -0.2222222   0.5555556   0.1111111  -0.3333333
+
+
+--> X=[0;0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+   0.
+
+
+--> for i=1:6
+  > X=F*(b-U*X);
+  > end
+
+--> X
+ X  = 
+
+   0.0142533
+   1.0007073
+  -0.0067944
+   0.0029578
+
+
+--> solB
+ solB  = 
+
+   1.   0.   0.   0.   0.
+   0.   1.   0.   0.   1.
+   0.   0.   1.   0.   0.
+   0.   0.   0.   1.   0.
+
+
+--> //Este si que dona. Com ha dit Vicent.
+
+--> //--------------------------------------------------
+
+--> //Activitat 3
+
+--> A=[0.2 2.2 4.5;1.3 3.7 2.1;4.2 3.1 0.4]
+ A  = 
+
+   0.2   2.2   4.5
+   1.3   3.7   2.1
+   4.2   3.1   0.4
+
+
+--> //Apartat a
+
+--> a=[0.7;1.2;5.2]
+ a  = 
+
+   0.7
+   1.2
+   5.2
+
+
+--> DD(A)
+ ans  =
+
+  F
+
+
+--> //No es diagonalment dominant, ja vorem que passa....
+
+--> D=diag(diag(A));
+
+--> L=tril(A)-D;
+
+--> U=triu(A)-D;
+
+--> R=L+U;
+
+--> F=inv(D);
+
+--> X=[0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+
+
+--> for i=1:20
+  > X=F*(a-R*X);
+  > end
+
+--> X
+ X  = 
+
+  -9.867D+23
+  -3.300D+22
+  -2.743D+23
+
+
+--> rref([A a])
+ ans  =
+
+   1.   0.   0.   1.4589329
+   0.   1.   0.  -0.3318375
+   0.   0.   1.   0.2529458
+
+
+--> for i=1:20
+  > X=F*(a-R*X)
+  > end
+ X  = 
+
+   6.534D+24
+   5.024D+23
+   1.062D+25
+
+ X  = 
+
+  -2.444D+26
+  -8.321D+24
+  -7.250D+25
+
+ X  = 
+
+   1.723D+27
+   1.270D+26
+   2.631D+27
+
+ X  = 
+
+  -6.059D+28
+  -2.098D+27
+  -1.907D+28
+
+ X  = 
+
+   4.522D+29
+   3.211D+28
+   6.524D+29
+
+ X  = 
+
+  -1.503D+31
+  -5.292D+29
+  -4.997D+30
+
+ X  = 
+
+   1.183D+32
+   8.118D+30
+   1.619D+32
+
+ X  = 
+
+  -3.733D+33
+  -1.335D+32
+  -1.305D+33
+
+ X  = 
+
+   3.082D+34
+   2.052D+33
+   4.023D+34
+
+ X  = 
+
+  -9.278D+35
+  -3.366D+34
+  -3.396D+35
+
+ X  = 
+
+   8.010D+36
+   5.187D+35
+   1.000D+37
+
+ X  = 
+
+  -2.308D+38
+  -8.492D+36
+  -8.813D+37
+
+ X  = 
+
+   2.076D+39
+   1.311D+38
+   2.489D+39
+
+ X  = 
+
+  -5.744D+40
+  -2.142D+39
+  -2.282D+40
+
+ X  = 
+
+   5.369D+41
+   3.313D+40
+   6.197D+41
+
+ X  = 
+
+  -1.431D+43
+  -5.404D+41
+  -5.895D+42
+
+ X  = 
+
+   1.386D+44
+   8.373D+42
+   1.544D+44
+
+ X  = 
+
+  -3.567D+45
+  -1.363D+44
+  -1.520D+45
+
+ X  = 
+
+   3.570D+46
+   2.116D+45
+   3.851D+46
+
+ X  = 
+
+  -8.897D+47
+  -3.440D+46
+  -3.912D+47
+
+
+--> //Cadascun multiplica per 10 el anterior... Aixo significa Divergencia. No es convergent. No s'estabilitzara mai.
+
+--> //Apartat B
+
+--> //Permutant la linia 1 i la 3, ja sera DD
+
+--> A
+ A  = 
+
+   0.2   2.2   4.5
+   1.3   3.7   2.1
+   4.2   3.1   0.4
+
+--> A([1 3],:)=A([3 1],:)
+ A  = 
+
+   4.2   3.1   0.4
+   1.3   3.7   2.1
+   0.2   2.2   4.5
+
+
+--> a([1 3],:)=a([3 1],:)
+ a  = 
+
+   5.2
+   1.2
+   0.7
+
+
+--> DD(A)
+ ans  =
+
+  T
+
+
+--> //Ara si es DiagonalDominant
+
+--> //Jacobi de nou....
+
+--> D=diag(diag(A))
+ D  = 
+
+   4.2   0.    0. 
+   0.    3.7   0. 
+   0.    0.    4.5
+
+
+--> L=tril(A)-D;
+
+--> U=triu(A)-D;
+
+--> R=L+U;
+
+--> F=inv(D)
+ F  = 
+
+   0.2380952   0.          0.       
+   0.          0.2702703   0.       
+   0.          0.          0.2222222
+
+
+--> X=[0;0;0]
+ X  = 
+
+   0.
+   0.
+   0.
+
+
+--> for i=1:20
+  > X=F*(a-R*X);
+  > end
+
+--> X
+ X  = 
+
+   1.4569683
+  -0.3327386
+   0.2516418
+
+
+--> rref([A a])
+ ans  =
+
+   1.   0.   0.   1.4589329
+   0.   1.   0.  -0.3318375
+   0.   0.   1.   0.2529458
+
+
+--> //Ara si que ha donat perque era DD.
+
+--> //----------------------------------
+
+--> //Activitat 4
+
+--> diary(0)

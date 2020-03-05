@@ -1,0 +1,372 @@
+ ans  =
+
+   1.
+
+
+--> //Activitat 1
+
+--> //La a no es estocastica perque cada columna no suma 1.
+
+--> //La b no es estocastica perque, encara que les columnes sumen 1. Els elements son probabilitats i la columna 2 te una probabilitat negativa.
+
+--> //La c si que es estocastica, ja que cadascuna de les tres columnes sumen 1 i son positives.
+
+--> //Per saber si una matriu es estocastica sempre se pot multiplicar una fila de uns per la matriu y que done com a resultat tot uns. Que seria que totes les columnes donen 1.
+
+--> //Activitat 2
+
+--> //Apartat "a"
+
+--> //X estacionari si sols si X pertany Kernel(P-I)
+
+--> A=[0 0.5 0 0;0]
+
+inconsistent row/column dimensions
+
+--> A=[0 0.5 0 0;0.25 0 0 0;0.5 0.25 1 0;0.25 0.25 0 1]
+ A  = 
+
+   0.     0.5    0.   0.
+   0.25   0.     0.   0.
+   0.5    0.25   1.   0.
+   0.25   0.25   0.   1.
+
+
+--> eye(A)
+ ans  =
+
+   1.   0.   0.   0.
+   0.   1.   0.   0.
+   0.   0.   1.   0.
+   0.   0.   0.   1.
+
+
+--> kernel(A-eye(A))
+ ans  =
+
+   0.   0.
+   0.   0.
+   0.   1.
+   1.   0.
+
+
+--> //ens ha tornat Alfa*[0;0;0;1] + Beta*[0;0;1;0]
+
+--> //Te infinits vectors estacionaris, un per a alfa i un per a beta.
+
+--> //
+
+--> //Mirar llibreta fulla 2 darrere.
+
+--> //Activitat 3
+
+--> B=[0.05 0.85 0.5; 0.1 0.05 0.1; 0.85 0.1 0.4]
+ B  = 
+
+   0.05   0.85   0.5
+   0.1    0.05   0.1
+   0.85   0.1    0.4
+
+
+--> //Apartat a: Si es estocastica regular perque NO te cap zero. El problema es quan te algun zero, que pot serho o no
+
+--> kernel(B-eye(B))
+ ans  =
+
+   0.559181
+   0.144788
+   0.8163045
+
+
+--> //Apartat b: el vector estacionari es unic, es lo anterior... 0.55 0.14 0.81
+
+--> //Apartat c: Esta en la llibreta pagina 2 darrere.
+
+--> //Apartat D:
+
+--> x=[0.3;0.5;0.2]
+ x  = 
+
+   0.3
+   0.5
+   0.2
+
+
+--> for i=1:10
+  > x=B*x
+  > end
+ x  = 
+
+   0.54
+   0.075
+   0.385
+
+ x  = 
+
+   0.28325
+   0.09625
+   0.6205
+
+ x  = 
+
+   0.406225
+   0.0951875
+   0.4985875
+
+ x  = 
+
+   0.3505144
+   0.0952406
+   0.554245
+
+ x  = 
+
+   0.3756028
+   0.095238
+   0.5291593
+
+ x  = 
+
+   0.3643121
+   0.0952381
+   0.5404498
+
+ x  = 
+
+   0.3693929
+   0.0952381
+   0.535369
+
+ x  = 
+
+   0.3671065
+   0.0952381
+   0.5376554
+
+ x  = 
+
+   0.3681354
+   0.0952381
+   0.5366265
+
+ x  = 
+
+   0.3676724
+   0.0952381
+   0.5370895
+
+
+--> V=kernel(B-eye(B))
+ V  = 
+
+   0.559181
+   0.144788
+   0.8163045
+
+
+--> v=V/sum(V)
+ v  = 
+
+   0.3678161
+   0.0952381
+   0.5369458
+
+
+--> //se veu que aproxima les iteracions. Si posse mes de 10 iteracios, aproximara mes encara.
+
+--> //Activitat 4
+
+--> //Apartat a: Esta la matriu en la llibreta pagina 3
+
+--> //Es estocastica perque totes les columnes sumen 1.
+
+--> //Pot ser o no regular perque te un zero almenys.
+
+--> P=[0.7 0.05 0;0.1 0.8 0.3;0.2 0.15 0.7]
+ P  = 
+
+   0.7   0.05   0. 
+   0.1   0.8    0.3
+   0.2   0.15   0.7
+
+
+--> P^5
+ ans  =
+
+   0.20472   0.09456   0.06216
+   0.43776   0.58032   0.56736
+   0.35752   0.32512   0.37048
+
+
+--> P^1
+ ans  =
+
+   0.7   0.05   0. 
+   0.1   0.8    0.3
+   0.2   0.15   0.7
+
+
+--> P^2
+ ans  =
+
+   0.495   0.075   0.015
+   0.21    0.69    0.45 
+   0.295   0.235   0.535
+
+
+--> //Ara ja no te cap zero aixi que ara ja es confirmat que es regular perque no hi ha cap 0.
+
+--> //Apartat b
+
+--> //Resultats en aquestes eleccions: x0
+
+--> x0=[0.55; 0.40;0.05]
+ x0  = 
+
+   0.55
+   0.4
+   0.05
+
+
+--> //En les següents eleccions... x1 sera igual a una aplicacio de la cadena de markov
+
+--> x1=P*x0
+ x1  = 
+
+   0.405
+   0.39
+   0.205
+
+
+--> //Apartat C: Se pot fer per cadenes de Markov (mitjançant bucles) o per el vector estacionari kernel(P-eye(P))
+
+--> //Amb el kernel seria:
+
+--> V=kernel(P - eye(P))
+ V  = 
+
+   0.140797
+   0.8447819
+   0.5162556
+
+
+--> v=V/sum(V)
+ v  = 
+
+   0.09375
+   0.5625
+   0.34375
+
+
+--> //Ahi es on s'estabilitza.
+
+--> //Amb les cadenes de markov se varia el bucle amb les iteracions
+
+--> x0
+ x0  = 
+
+   0.55
+   0.4
+   0.05
+
+
+--> for i=1:15
+  > x0=P*x0
+  > end
+ x0  = 
+
+   0.405
+   0.39
+   0.205
+
+ x0  = 
+
+   0.303
+   0.414
+   0.283
+
+ x0  = 
+
+   0.2328
+   0.4464
+   0.3208
+
+ x0  = 
+
+   0.18528
+   0.47664
+   0.33808
+
+ x0  = 
+
+   0.153528
+   0.501264
+   0.345208
+
+ x0  = 
+
+   0.1325328
+   0.5199264
+   0.3475408
+
+ x0  = 
+
+   0.1187693
+   0.5334566
+   0.3477741
+
+ x0  = 
+
+   0.1098113
+   0.5429745
+   0.3472142
+
+ x0  = 
+
+   0.1040167
+   0.549525
+   0.3464584
+
+ x0  = 
+
+   0.1002879
+   0.5539592
+   0.3457529
+
+ x0  = 
+
+   0.0978995
+   0.556922
+   0.3451785
+
+ x0  = 
+
+   0.0963757
+   0.5588811
+   0.3447432
+
+ x0  = 
+
+   0.0954071
+   0.5601654
+   0.3444275
+
+ x0  = 
+
+   0.0947932
+   0.5610013
+   0.3442055
+
+ x0  = 
+
+   0.0944053
+   0.561542
+   0.3440527
+
+
+--> //amb 10 iteracions no seria suficient per estabilitzar... per tant el estacionari es mes precis.
+
+--> //Recorda que el estacionari es la manera teorica de ferse i la cadena de markov la practica... Aleshores el estacionari cuadrara el resultat i markov cal fer proves 
+
+--> 
+
