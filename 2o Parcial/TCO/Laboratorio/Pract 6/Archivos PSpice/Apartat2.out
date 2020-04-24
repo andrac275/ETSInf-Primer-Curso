@@ -1,0 +1,524 @@
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Apr 16 19:19:26 2020
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Apartat2.net"
+
+**** INCLUDING Apartat2.net ****
+* Schematics Netlist *
+
+
+
+X_U1A         $N_0001 $N_0002 $G_DPWR $G_DGND 7405 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         $N_0003 $N_0002 $G_DPWR $G_DGND 7405 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_Rpu         $N_0002 $N_0004  2k2  
+V_Vcc         $N_0004 0 5V
+X_U3A         $N_0005 $N_0006 $G_DPWR $G_DGND 7405 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4A         $N_0007 $N_0006 $G_DPWR $G_DGND 7405 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_Vc         $N_0001 0 5V
+V_Vd         $N_0003 0 0V
+V_Va         $N_0005 0 5V
+V_Vb         $N_0007 0 0V
+
+**** RESUMING Apartat2.cir ****
+.INC "Apartat2.als"
+
+
+
+**** INCLUDING Apartat2.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1A           U1A(A=$N_0001 Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U2A           U2A(A=$N_0003 Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+R_Rpu           Rpu(1=$N_0002 2=$N_0004 )
+V_Vcc           Vcc(+=$N_0004 -=0 )
+X_U3A           U3A(A=$N_0005 Y=$N_0006 PWR=$G_DPWR GND=$G_DGND )
+X_U4A           U4A(A=$N_0007 Y=$N_0006 PWR=$G_DPWR GND=$G_DGND )
+V_Vc            Vc(+=$N_0001 -=0 )
+V_Vd            Vd(+=$N_0003 -=0 )
+V_Va            Va(+=$N_0005 -=0 )
+V_Vb            Vb(+=$N_0007 -=0 )
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING Apartat2.cir ****
+.probe
+
+
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node $N_0002
+*
+* Moving X_U1A.U1:OUT1 from analog node $N_0002 to new digital node $N_0002$DtoA
+X$$N_0002_DtoA1
++ $N_0002$DtoA
++ $N_0002
++ $G_DPWR
++ $G_DGND
++ DtoA_STD_OC
++       PARAMS: DRVH=   1.0000E+06 DRVL= 104    CAPACITANCE=   0     
+* Moving X_U2A.U1:OUT1 from analog node $N_0002 to new digital node $N_0002$DtoA2
+X$$N_0002_DtoA2
++ $N_0002$DtoA2
++ $N_0002
++ $G_DPWR
++ $G_DGND
++ DtoA_STD_OC
++       PARAMS: DRVH=   1.0000E+06 DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0001
+*
+* Moving X_U1A.U1:IN1 from analog node $N_0001 to new digital node $N_0001$AtoD
+X$$N_0001_AtoD1
++ $N_0001
++ $N_0001$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0003
+*
+* Moving X_U2A.U1:IN1 from analog node $N_0003 to new digital node $N_0003$AtoD
+X$$N_0003_AtoD1
++ $N_0003
++ $N_0003$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0005
+*
+* Moving X_U3A.U1:IN1 from analog node $N_0005 to new digital node $N_0005$AtoD
+X$$N_0005_AtoD1
++ $N_0005
++ $N_0005$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0007
+*
+* Moving X_U4A.U1:IN1 from analog node $N_0007 to new digital node $N_0007$AtoD
+X$$N_0007_AtoD1
++ $N_0007
++ $N_0007$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+
+X$DIGIFPWR 0 DIGIFPWR
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         D74             
+          IS    1.000000E-15  100.000000E-18 
+          RS    2              25            
+         CJO    2.000000E-12    2.000000E-12 
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q74             
+               NPN             
+          IS  100.000000E-18 
+          BF   49            
+          NF    1            
+         ISE  100.000000E-18 
+          BR     .03         
+          NR    1            
+         ISC  400.000000E-18 
+          RB   50            
+          RC   20            
+         CJE    1.000000E-12 
+         VJE     .9          
+         MJE     .5          
+         CJC  500.000000E-15 
+         VJC     .8          
+         CJS    3.000000E-12 
+         VJS     .7          
+         MJS     .33         
+          TF  200.000000E-12 
+          TR   10.000000E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74_OC        
+        FILE DSO_DTOA        
+      FORMAT    6            
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  200.000000E+03 
+       S1RHI  200.000000E+03 
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    5.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+        FILE DSO_ATOD        
+      FORMAT    6            
+     CHGONLY    1            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_05            
+      TPLHMN   16.000000E-09 
+      TPLHTY   40.000000E-09 
+      TPLHMX   55.000000E-09 
+      TPHLMN    3.200000E-09 
+      TPHLTY    8.000000E-09 
+      TPHLMX   15.000000E-09 
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STD_OC       IO_STD          
+        DRVL  104             104            
+        DRVH    1.000000E+06   96.4          
+       AtoD1 AtoD_STD        AtoD_STD        
+       AtoD2 AtoD_STD_NX     AtoD_STD_NX     
+       AtoD3 AtoD_STD        AtoD_STD        
+       AtoD4 AtoD_STD_NX     AtoD_STD_NX     
+       DtoA1 DtoA_STD_OC     DtoA_STD        
+       DtoA2 DtoA_STD_OC     DtoA_STD        
+       DtoA3 DtoA_STD_OC     DtoA_STD        
+       DtoA4 DtoA_STD_OC     DtoA_STD        
+      TSWHL1    2.617000E-09    1.373000E-09 
+      TSWHL2    2.598000E-09    1.346000E-09 
+      TSWHL3    2.747000E-09    1.511000E-09 
+      TSWHL4    2.732000E-09    1.487000E-09 
+      TSWLH1    1.432000E-09    3.382000E-09 
+      TSWLH2    1.460000E-09    3.424000E-09 
+      TSWLH3    1.589000E-09    3.517000E-09 
+      TSWLH4    1.615000E-09    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                       
+
+($N_0001)    5.0000                   ($N_0002)     .1073                       
+
+($N_0003)    0.0000                   ($N_0004)    5.0000                       
+
+($N_0005)    5.0000                   ($N_0007)    0.0000                       
+
+(X$$N_0001_AtoD1.1)    1.5648         (X$$N_0001_AtoD1.2)     .7824             
+
+(X$$N_0001_AtoD1.3)    2.2862         (X$$N_0003_AtoD1.1)     .0915             
+
+(X$$N_0003_AtoD1.2)     .0457         (X$$N_0003_AtoD1.3)     .8277             
+
+(X$$N_0005_AtoD1.1)    1.5648         (X$$N_0005_AtoD1.2)     .7824             
+
+(X$$N_0005_AtoD1.3)    2.2862         (X$$N_0007_AtoD1.1)     .0915             
+
+(X$$N_0007_AtoD1.2)     .0457         (X$$N_0007_AtoD1.3)     .8277         
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+($N_0003$AtoD) : 0                    ($N_0002$DtoA) : 0                        
+
+($N_0007$AtoD) : 0                    ( $N_0006) : 0     ($N_0002$DtoA2) : Z    
+
+($N_0001$AtoD) : 1                    ($N_0005$AtoD) : 1                    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vcc       -2.446E-03
+    V_Vc        -2.035E-05
+    V_Vd         1.043E-03
+    V_Va        -2.035E-05
+    V_Vb         1.043E-03
+    X$DIGIFPWR.VDPWR  -1.605E-02
+    X$DIGIFPWR.VDGND   3.959E-04
+
+    TOTAL POWER DISSIPATION   9.27E-02  WATTS
+
+
+**** 04/16/20 19:19:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 6\Apartat1\Apartat2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         X$$N_0001_AtoD1.D0      X$$N_0001_AtoD1.D1    
+MODEL        D74CLMP                 D74                   
+ID          -5.00E-12                6.99E-04             
+VD          -5.00E+00                7.82E-01             
+REQ          1.00E+12                3.70E+01             
+CAP          8.17E-13                3.58E-12             
+
+NAME         X$$N_0001_AtoD1.D2      X$$N_0003_AtoD1.D0    
+MODEL        D74                     D74CLMP               
+ID           6.99E-04                0.00E+00             
+VD           7.82E-01                0.00E+00             
+REQ          3.70E+01                9.63E+11             
+CAP          3.58E-12                2.00E-12             
+
+NAME         X$$N_0003_AtoD1.D1      X$$N_0003_AtoD1.D2    
+MODEL        D74                     D74                   
+ID           4.62E-14                4.62E-14             
+VD           4.57E-02                4.57E-02             
+REQ          9.78E+11                9.78E+11             
+CAP          2.05E-12                2.05E-12             
+
+NAME         X$$N_0005_AtoD1.D0      X$$N_0005_AtoD1.D1    
+MODEL        D74CLMP                 D74                   
+ID          -5.00E-12                6.99E-04             
+VD          -5.00E+00                7.82E-01             
+REQ          1.00E+12                3.70E+01             
+CAP          8.17E-13                3.58E-12             
+
+NAME         X$$N_0005_AtoD1.D2      X$$N_0007_AtoD1.D0    
+MODEL        D74                     D74CLMP               
+ID           6.99E-04                0.00E+00             
+VD           7.82E-01                0.00E+00             
+REQ          3.70E+01                9.63E+11             
+CAP          3.58E-12                2.00E-12             
+
+NAME         X$$N_0007_AtoD1.D1      X$$N_0007_AtoD1.D2    
+MODEL        D74                     D74                   
+ID           4.62E-14                4.62E-14             
+VD           4.57E-02                4.57E-02             
+REQ          9.78E+11                9.78E+11             
+CAP          2.05E-12                2.05E-12             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X$$N_0001_AtoD1.Q1      X$$N_0003_AtoD1.Q1    
+MODEL        Q74                     Q74                   
+IB           6.78E-04                1.04E-03             
+IC          -6.99E-04               -4.62E-14             
+VBE         -2.71E+00                8.28E-01             
+VBC          7.21E-01                7.36E-01             
+VCE         -3.44E+00                9.15E-02             
+BETADC      -1.03E+00               -4.43E-11             
+GM          -7.87E-04                3.95E-02             
+RPI          4.90E+13                1.20E+03             
+RX           5.00E+01                5.00E+01             
+RO           1.27E+03                8.44E+02             
+CBE          4.97E-13                1.01E-11             
+CBC          8.64E-12                1.26E-11             
+CJS          2.03E-12                2.88E-12             
+BETAAC      -3.86E+10                4.75E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2      -1.37E+07                2.77E+08             
+
+
+
+NAME         X$$N_0005_AtoD1.Q1      X$$N_0007_AtoD1.Q1    
+MODEL        Q74                     Q74                   
+IB           6.78E-04                1.04E-03             
+IC          -6.99E-04               -4.62E-14             
+VBE         -2.71E+00                8.28E-01             
+VBC          7.21E-01                7.36E-01             
+VCE         -3.44E+00                9.15E-02             
+BETADC      -1.03E+00               -4.43E-11             
+GM          -7.87E-04                3.95E-02             
+RPI          4.90E+13                1.20E+03             
+RX           5.00E+01                5.00E+01             
+RO           1.27E+03                8.44E+02             
+CBE          4.97E-13                1.01E-11             
+CBC          8.64E-12                1.26E-11             
+CJS          2.03E-12                2.88E-12             
+BETAAC      -3.86E+10                4.75E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2      -1.37E+07                2.77E+08             
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

@@ -1,0 +1,25 @@
+* F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 7\Archivos PSpice\Apartat2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Fri Apr 24 12:46:37 2020
+
+
+
+** Analysis setup **
+.tran 0ns 1u
+.OP 
+.LIB "F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 7\Archivos PSpice\Apartat2.lib"
+.STMLIB "Apartat2.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Apartat2.net"
+.INC "Apartat2.als"
+
+
+.probe
+
+
+.END
