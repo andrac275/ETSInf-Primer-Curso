@@ -1,0 +1,25 @@
+* W:\TCO\pract5\Apartat2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 10 14:27:10 2020
+
+
+
+** Analysis setup **
+.tran 1n 100n
+.OP 
+.LIB "W:\TCO\pract5\Apartat1.lib"
+.LIB "W:\TCO\pract5\Apartat2.lib"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Apartat2.net"
+.INC "Apartat2.als"
+
+
+.probe
+
+
+.END

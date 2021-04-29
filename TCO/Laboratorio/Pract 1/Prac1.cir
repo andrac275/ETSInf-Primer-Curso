@@ -1,0 +1,22 @@
+* W:\TCO\Practica 1\Prac1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Feb 11 14:20:35 2020
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Prac1.net"
+.INC "Prac1.als"
+
+
+.probe
+
+
+.END

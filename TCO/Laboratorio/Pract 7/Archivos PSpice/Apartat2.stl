@@ -1,0 +1,38 @@
+* F:\Dropbox\Universidad Dropbox\1er Curso\2o Cuatri\TCO\Laboratorio\Pract 7\Archivos PSpice\Apartat2.stl written on Fri Apr 24 12:39:14 2020
+* by Stimulus Editor -- Evaluation Version 9.1
+;!Stimulus Get
+;! A Digital B Digital C Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 4us
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS C STIM (1, 1) ;! CLOCK 1MEGHz 0.5 0 0
++   +0s 0
++   +500ns 1
++   Repeat Forever
++      +500ns 0
++      +500ns 1
++   EndRepeat
+.STIMULUS B STIM (1, 1) ;! CLOCK 2MEGHz 0.5 0 0
++   +0s 0
++   +250ns 1
++   Repeat Forever
++      +250ns 0
++      +250ns 1
++   EndRepeat
+.STIMULUS A STIM (1, 1) ;! CLOCK 4MEGHz 0.5 0 0
++   +0s 0
++   +125ns 1
++   Repeat Forever
++      +125ns 0
++      +125ns 1
++   EndRepeat
+.STIMULUS A STIM (1, 1)
++   +0s Z
+.STIMULUS C STIM (1, 1)
++   +0s Z
+.STIMULUS B STIM (1, 1)
++   +0s Z

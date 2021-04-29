@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=RecursioArraysCerca
+comment0.text=\r\n\ Problemes\ recursius\ de\ cerca\ amb\ arrays.\r\n\ \r\n\ @author\ PRG\ \r\n\ @version\ Curs\ 2019/20\r\n
+comment1.params=
+comment1.target=RecursioArraysCerca()
+comment10.params=a\ ini\ fi
+comment10.target=boolean\ dobleDe2(int[],\ int,\ int)
+comment10.text=\ Donat\ un\ array\ a[ini..fi],\ torna\ true\ sii\ a[j\ +\ 1]\ \=\ 2\ *\ a[j]\ \r\n\ \ per\ a\ tot\ j\ tal\ que\ ini\ <\=\ j\ <\ fi.\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ fi\ <\ a.length\r\n\ \ Versio\ 2\:\ Estrategia\:\ dividir\ l'array\ en\ dues\ parts,\ comprovar\ \r\n\ \ que\ cadascuna\ d'elles\ ho\ compleix\ i\ que\ el\ primer\ element\ de\ la\r\n\ \ segona\ part\ es\ el\ doble\ de\ l'ultim\ element\ de\ la\ primera\ part.\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ boolean\ doble\ \=\ dobleDe2(a,\ 0,\ a.length\ -\ 1);\r\n
+comment2.params=a\ pos
+comment2.target=int\ trobarRecAsc(int[],\ int)
+comment2.text=\ Torna\ la\ posicio\ del\ primer\ element\ distint\ \r\n\ \ de\ zero\ de\ a[pos..a.length-1].\r\n\ \ Precondicio\:\ 0\ <\=\ pos\ <\=\ a.length\ \r\n\ \ Cerca\ recursiva\ ascendent\ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ noZero\ \=\ trobarRecAsc(a,\ 0);\r\n
+comment3.params=a\ pos
+comment3.target=int\ trobarRecDesc(int[],\ int)
+comment3.text=\ Torna\ la\ posicio\ del\ primer\ element\ distint\r\n\ \ de\ zero\ de\ a[0..pos].\r\n\ \ Precondicio\:\ -1\ <\=\ pos\ <\ a.length\r\n\ \ Cerca\ recursiva\ descendent\ \ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ noZero\ \=\ trobarRecDesc(a,\ a.length\ -\ 1);\r\n
+comment4.params=a\ x\ ini\ fi
+comment4.target=int\ cercaBinIter(int[],\ int,\ int,\ int)
+comment4.text=\ Torna\ la\ posicio\ d'un\ enter\ x\ en\ a[ini..fi]\ \r\n\ \ ordenat\ ascendentment.\r\n\ \ Precondicio\:\ 0\ <\=\ ini\ <\=\ a.length\ i\ -1\ <\=\ fi\ <\ a.length,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ i\ a\ ordenat\ ascendentment\r\n\ \ Cerca\ binaria\ iterativa\ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ pos\ \=\ cercaBinIter(a,\ x,\ 0,\ a.length\ -\ 1);\r\n
+comment5.params=a\ x\ ini\ fi
+comment5.target=int\ cercaBinRec(int[],\ int,\ int,\ int)
+comment5.text=\ Torna\ la\ posicio\ d'un\ enter\ x\ en\ a[ini..fi]\ \r\n\ \ ordenat\ ascendentment.\r\n\ \ Precondicio\:\ 0\ <\=\ ini\ <\=\ a.length\ i\ -1\ <\=\ fi\ <\ a.length,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ i\ a\ ordenat\ ascendentment\r\n\ \ Cerca\ binaria\ recursiva\ \ \ \ \ \ \ \ \ \ \ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ pos\ \=\ encBinRec(a,\ x,\ 0,\ a.length\ -\ 1);\r\n
+comment6.params=a\ pos
+comment6.target=boolean\ ordreAsc(int[],\ int)
+comment6.text=\ Comprova\ si\ a[pos..a.length-1]\ esta\ ordenat\ ascendentment.\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ pos\ <\ a.length\ \r\n\ \ Cerca\ recursiva\ ascendent\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ boolean\ ordenat\ \=\ ordreAsc(a,\ 0);\r\n
+comment7.params=a\ ini\ fi
+comment7.target=boolean\ esCapicua(int[],\ int,\ int)
+comment7.text=\ Comprova\ si\ a[ini..fi]\ es\ capicua.\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ a.length\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ <\=\ fi\ <\=\ a.length\ -\ 1\r\n\ \ Cerca\ recursiva\ combinada\r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ boolean\ capicua\ \=\ esCapicua(a,\ 0,\ a.length\ -\ 1);\r\n
+comment8.params=a\ pos
+comment8.target=int\ tresConsecRec(int[],\ int)
+comment8.text=\ Comprova\ si\ en\ a[pos..a.length-1]\ hi\ ha\ una\ subsequencia\ de\r\n\ \ tres\ enters\ consecutius\ en\ tres\ posicions\ consecutives\ \r\n\ \ de\ l'array.\ Torna\ la\ posicio\ inicial\ de\ la\ subsequencia\ \r\n\ \ o\ -1\ si\ no\ la\ troba.\r\n\ \ Precondicio\:\ a.length\ >\=\ 3\ i\ 0\ <\=\ pos\ <\=\ a.length\ -\ 2\ \r\n\ \ Cerca\ recursiva\ ascendent\ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ int\ posTresC\ \=\ tresConsecRec(a,\ 0);\r\n
+comment9.params=a\ ini\ fi
+comment9.target=boolean\ dobleDe(int[],\ int,\ int)
+comment9.text=\ Donat\ un\ array\ a[ini..fi],\ torna\ true\ sii\ a[j\ +\ 1]\ \=\ 2\ *\ a[j]\ \r\n\ \ per\ a\ tot\ j\ tal\ que\ ini\ <\=\ j\ <\ fi.\r\n\ \ Precondicio\:\ a.length\ >\ 0\ i\ 0\ <\=\ ini\ <\=\ fi\ <\ a.length\r\n\ \ Versio\ 1\:\ cerca\ recursiva\ ascendent\ \r\n\ \ Crida\ inicial\ per\ a\ tot\ l'array\:\ \r\n\ \ boolean\ doble\ \=\ dobleDe(a,\ 0,\ a.length\ -\ 1);\r\n
+numComments=11

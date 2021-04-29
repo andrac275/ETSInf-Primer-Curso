@@ -1,0 +1,110 @@
+
+**** 02/11/20 14:20:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * W:\TCO\Practica 1\Prac1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Feb 11 14:20:35 2020
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Prac1.net"
+
+**** INCLUDING Prac1.net ****
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  100  
+V_V1         $N_0003 0 15
+R_R3         $N_0002 $N_0001  220  
+R_R1         $N_0003 $N_0002  220  
+R_R4         $N_0001 0  100  
+
+**** RESUMING Prac1.cir ****
+.INC "Prac1.als"
+
+
+
+**** INCLUDING Prac1.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R2            R2(1=$N_0002 2=$N_0001 )
+V_V1            V1(+=$N_0003 -=0 )
+R_R3            R3(1=$N_0002 2=$N_0001 )
+R_R1            R1(1=$N_0003 2=$N_0002 )
+R_R4            R4(1=$N_0001 2=0 )
+.ENDALIASES
+
+
+**** RESUMING Prac1.cir ****
+.probe
+
+
+.END
+
+**** 02/11/20 14:20:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * W:\TCO\Practica 1\Prac1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    3.8585                   ($N_0002)    6.5113                       
+
+($N_0003)   15.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.859E-02
+
+    TOTAL POWER DISSIPATION   5.79E-01  WATTS
+
+
+**** 02/11/20 14:20:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * W:\TCO\Practica 1\Prac1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

@@ -1,0 +1,24 @@
+* W:\TCO\prac4\Curvas_Transistor.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 03 14:19:59 2020
+
+
+
+** Analysis setup **
+.DC LIN V_VGS 0V 5V 0.1V 
+.OP 
+.LIB "W:\TCO\prac4\Curvas_Transistor.lib"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Curvas_Transistor.net"
+.INC "Curvas_Transistor.als"
+
+
+.probe
+
+
+.END

@@ -1,0 +1,48 @@
+--> //Activitat 1
+
+--> //Declarar vectors
+
+--> u=[3;5;-1;0];
+
+--> v=[1/2;1/4;1/3;-3];
+    
+--> //Apartat A. Calcular producte escalar dels dos vector u.v, modul de u i modul de v
+
+--> //u.v
+
+--> u'*v
+ ans  =
+
+   2.4166667
+
+--> //Modul ||u||
+
+--> norm(u)
+ ans  =
+
+   5.9160798
+
+--> //Modul ||v||
+
+--> norm(v)
+ ans  =
+
+   3.0697901
+
+--> //Apartat B. Distancia entre u i v == d(u,v)
+
+--> norm(u - v)
+ ans  =
+
+   6.2920806
+
+--> //Apartat C. Vector unitari amb la mateixa direcció que u.
+
+--> u/norm(u)
+ ans  =
+
+   0.5070926
+   0.8451543
+  -0.1690309
+   0.       
+

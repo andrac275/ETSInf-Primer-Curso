@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Act1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Act1\ here.\ EAMEEEEN\r\n\r\n\ @author\ adfasf\r\n\ @version\ 2020\r\n
-comment1.params=a\ x\ pos
-comment1.target=int\ sumaMenors(int[],\ int,\ int)
-comment1.text=\r\n\ Precondicio\:\ pos\ >\=0.\r\n
-numComments=2

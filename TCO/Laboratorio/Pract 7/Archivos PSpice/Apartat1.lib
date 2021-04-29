@@ -1,0 +1,8 @@
+.model MbreakN-X NMOS Vto = 1 Kp = 15u 
+*$
+.model MbreakN-X1 NMOS Vto = 1 Kp = 15u 
+*$
+.model MbreakP-X PMOS Vto = -1 Kp = 15u 
+*$
+.model MbreakP-X1 PMOS Vto = -1 Kp = 15u 
+*$
